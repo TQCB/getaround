@@ -46,6 +46,8 @@ def min_delay(df, threshold, scope='all'):
         df_delay = df_delay[df_delay['type'] == scope]
     
     state_mask = df_delay['state'] == 'ended'
+    
+    # Dropped ended trips and canceled trips
     dt_e = df_delay[state_mask]
     dt_c = df_delay[~state_mask]
     
