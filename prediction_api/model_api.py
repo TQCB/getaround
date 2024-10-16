@@ -46,6 +46,16 @@ async def docs_redirect():
 
 @app.post("/predict")
 async def predict(cars: List[Car]):
+    '''
+    Predicts car rental price for a list of cars.
+
+    **Request:**
+
+    - **Method:** POST
+    - **URL:** /predict
+    - **Body:**
+        A JSON array containing car information objects. Each object must conform to the `Car` model schema.
+    '''
     cars_data = preprocessor.transform(pd.DataFrame(jsonable_encoder(cars)))
     prediction = model.predict(cars_data)
     response = json.dumps({'prediction' : prediction.tolist()})
