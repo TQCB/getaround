@@ -114,9 +114,9 @@ if __name__ == '__main__':
             for y in [1,2]:
                 match y:
                     case 1:
-                        delay_bool = True
-                    case 2:
                         delay_bool = False
+                    case 2:
+                        delay_bool = True
                 
                 match x:
                     case 1:
