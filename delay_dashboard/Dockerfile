@@ -6,4 +6,4 @@ run pip install --no-cache-dir --timeout 1000 -r requirements.txt
 
 copy . .
 
-cmd streamlit run dashboard.py
+cmd streamlit run --server.port $PORT dashboard.py
